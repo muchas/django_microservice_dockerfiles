@@ -1,0 +1,7 @@
+FROM kglod/python_dev
+
+
+RUN mkdir /gunicorn
+ADD ./runner.sh /runner.sh
+ADD ./gunicorn/run.py /gunicorn/run.py
+ADD ./gunicorn/config.dev.py /gunicorn/config.py

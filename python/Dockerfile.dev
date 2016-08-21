@@ -1,0 +1,18 @@
+FROM kglod/python
+
+
+ENV VIRT_DIR ${APP_DIR}/.virtualenv
+ENV REQ_FILE requirements.dev.txt
+ENV PYTHON_BIN ${VIRT_DIR}/bin/python3
+ENV PIP_BIN ${VIRT_DIR}/bin/pip3
+
+
+ADD ./runner.dev.sh /runner.sh
+
+
+# intall some helpful tools
+RUN apt-get update && \
+    apt-get install -y gettext strace vim
+
+# install virtualenv and enable it
+RUN pip3 install virtualenv
