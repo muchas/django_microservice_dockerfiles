@@ -19,6 +19,10 @@ function run {
   source "/runner.sh"
 }
 
+function run_tests {
+  source "/test_runner.sh"
+}
+
 function build_and_run {
   enable_virtualenv
   install
