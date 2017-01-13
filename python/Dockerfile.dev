@@ -6,8 +6,6 @@ ENV REQ_FILE requirements.dev.txt
 ENV PYTHON_BIN ${VIRT_DIR}/bin/python3
 ENV PIP_BIN ${VIRT_DIR}/bin/pip3
 
-
-ADD ./entrypoint.sh /entrypoint.sh
 ADD ./runner.dev.sh /runner.sh
 
 # intall some helpful tools
@@ -16,7 +14,4 @@ RUN apt-get update && \
 
 # install virtualenv and enable it
 RUN pip3 install virtualenv
-
-ENTRYPOINT ["/entrypoint.sh"]
-CMD ["build_and_run"]
 
